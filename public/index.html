@@ -45,14 +45,14 @@
 			<div class="eight columns">
 				<h3>Hark! A Form</h3>
 				<form action="someotherpage.html" method="post">
-					Name: <input type="text" name="vgc_name" /> <select name="server_name">
+					<label>Name: </label><input type="text" class="small input-text" name="vgc_name" /> <select name="server_name">
                                                 <option value="thana_vesh">Thana Vesh</option>
                                                 <option value="ebon_hawk">Ebon Hawk</option>
                                                 <option value="mind_trick">Mind Trick</option>
-                                        </select> Allegiance: <form> <input type="radio" name="alleg" value="empire" /> Empire
-                                                <input type="radio" name="alleg" value="republic" /> Republic
+                                        </select><label for="alleg_radio">Allegiance: </label><form> <input type="radio" id="alleg_radio" name="alleg" value="empire" /> Empire
+                                                <input type="radio" id="alleg_radio" name="alleg" value="republic" /> Republic
 					</form> 
-					<input type="submit" value="Create" />
+					<input type="submit" class="nice small radius white button" value="Create" />
 				</form>
 			</div>
 
