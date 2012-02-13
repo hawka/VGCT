@@ -7,6 +7,13 @@ gem 'rails', '3.1.3'
 
 gem 'sqlite3'
 
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,13 +40,4 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', '~> 0.8.3', :require => false
-end
-
-#something with scaffolds
-group :development, :test do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
 end

@@ -1,5 +1,10 @@
 VGCT::Application.routes.draw do
-  resources :vgcs
+  resources :games
+
+  resources :players
+
+  resources :characters
+
   root :to => 'characters#index'
 
   # The priority is based upon order of creation:
