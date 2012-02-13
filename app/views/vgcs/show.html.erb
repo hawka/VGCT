@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @vgc.name %>
+</p>
+
+<p>
+  <b>Allegiance:</b>
+  <%= @vgc.allegiance %>
+</p>
+
+<p>
+  <b>Server:</b>
+  <%= @vgc.server %>
+</p>
+
+
+<%= link_to 'Edit', edit_vgc_path(@vgc) %> |
+<%= link_to 'Back', vgcs_path %>

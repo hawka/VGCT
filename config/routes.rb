@@ -1,4 +1,6 @@
 VGCT::Application.routes.draw do
+  resources :vgcs
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
