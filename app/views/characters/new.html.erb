@@ -1,5 +1,3 @@
-<h1>New character</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', characters_path %>
+<%= form_for @character, :url => characters_path, :html => { :class => :form } do |f| -%>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end -%>

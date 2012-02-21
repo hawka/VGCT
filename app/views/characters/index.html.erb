@@ -1,25 +1,30 @@
-<h1>Listing characters</h1>
-
-<table>
+<h1>Characters</h1>
+<table class="table table-striped">
+ <thead>
   <tr>
-    <th>Name</th>
-    <th>Level</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>ID</th>
+        <th>
+      <%= t("activerecord.attributes.character.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+    </th>
+        <th>Created at</th>
+    <th>Actions</th>
   </tr>
-
-<% @characters.each do |character| %>
-  <tr>
-    <td><%= character.name %></td>
-    <td><%= character.level %></td>
-    <td><%= link_to 'Show', character %></td>
-    <td><%= link_to 'Edit', edit_character_path(character) %></td>
-    <td><%= link_to 'Destroy', character, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  </thead>
+  <tbody>
+  <% @characters.each do |character| -%>
+   <tr>
+    <td><%= character.id %></td>
+        <td><%= link_to character.name, character_path(character) %>
+    </td>
+        <td><%= character.created_at %></td>
+    <td>
+      <%= link_to "Show", character_path(character) %>
+      <%= link_to "Edit", edit_character_path(character) %>
+      <%= link_to "Destroy", character_path(character), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+    </td>
+    </tr>
+    <% end -%>
+   </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Character', new_character_path %>
+<%= link_to "New", new_character_path, :class => 'btn btn-primary' %>

@@ -1,6 +1,4 @@
-<h1>Editing game</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @game %> |
-<%= link_to 'Back', games_path %>
+<%= form_for @game, :url => game_path(@game), :html => { :class => "edit_game", :id => "edit_game" } do |f| -%>
+  <input name="_method" type="hidden" value="put" />
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end -%>

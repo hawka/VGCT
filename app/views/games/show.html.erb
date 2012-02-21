@@ -1,20 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @game.title %>
-</p>
+<label class="label"><%= t("activerecord.attributes.game.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</label>
+<p><%= @game.title %></p>
 
-<p>
-  <b>Description:</b>
-  <%= @game.description %>
-</p>
+<label class="label"><%= t("activerecord.attributes.game.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</label>
+<p><%= @game.description %></p>
 
-<p>
-  <b>Genre:</b>
-  <%= @game.genre %>
-</p>
+<label class="label"><%= t("activerecord.attributes.game.genre", :default => t("activerecord.labels.genre", :default => "Genre")) %>:</label>
+<p><%= @game.genre %></p>
 
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<div class="form-actions">
+<%= link_to "Back", games_path, :class => 'btn'  %>
+<%= link_to "Edit", edit_game_path(@game), :class => 'btn' %>
+<%= link_to "Delete", game_path(@game), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
+</div>

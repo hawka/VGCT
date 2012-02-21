@@ -1,25 +1,18 @@
-<%= form_for(@character) do |f| %>
-  <% if @character.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:</h2>
 
-      <ul>
-      <% @character.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="clearfix">
+   <%= f.label :name, t("activerecord.attributes.character.name", :default => "Name"), :class => :label %>
+  <div class="input">
+    <%= f.text_field :name, :class => 'text_field' %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+<div class="clearfix">
+   <%= f.label :level, t("activerecord.attributes.character.level", :default => "Level"), :class => :label %>
+  <div class="input">
+    <%= f.number_field :level, :class => 'number_field' %>
   </div>
-  <div class="field">
-    <%= f.label :level %><br />
-    <%= f.number_field :level %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+<div class="form-actions">
+  <button class="btn primary" type="submit">Save</button> or
+	<%= link_to "Cancel", characters_path %>
+</div>

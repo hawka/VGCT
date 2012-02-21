@@ -1,29 +1,25 @@
-<%= form_for(@game) do |f| %>
-  <% if @game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
 
-      <ul>
-      <% @game.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="clearfix">
+   <%= f.label :title, t("activerecord.attributes.game.title", :default => "Title"), :class => :label %>
+  <div class="input">
+    <%= f.text_field :title, :class => 'text_field' %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+<div class="clearfix">
+   <%= f.label :description, t("activerecord.attributes.game.description", :default => "Description"), :class => :label %>
+  <div class="input">
+    <%= f.text_area :description, :class => 'text_area' %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+</div>
+
+<div class="clearfix">
+   <%= f.label :genre, t("activerecord.attributes.game.genre", :default => "Genre"), :class => :label %>
+  <div class="input">
+    <%= f.text_field :genre, :class => 'text_field' %>
   </div>
-  <div class="field">
-    <%= f.label :genre %><br />
-    <%= f.text_field :genre %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+<div class="form-actions">
+  <button class="btn primary" type="submit">Save</button> or
+	<%= link_to "Cancel", games_path %>
+</div>

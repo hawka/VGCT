@@ -1,10 +1,9 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Username:</b>
-  <%= @player.username %>
-</p>
+<label class="label"><%= t("activerecord.attributes.player.username", :default => t("activerecord.labels.username", :default => "Username")) %>:</label>
+<p><%= @player.username %></p>
 
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+<div class="form-actions">
+<%= link_to "Back", players_path, :class => 'btn'  %>
+<%= link_to "Edit", edit_player_path(@player), :class => 'btn' %>
+<%= link_to "Delete", player_path(@player), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
+</div>

@@ -1,9 +1,9 @@
 VGCT::Application.routes.draw do
-  resources :games
+  resources :characters
 
   resources :players
 
-  resources :characters
+  resources :games
 
   root :to => 'characters#index'
 

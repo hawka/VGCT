@@ -1,15 +1,12 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @character.name %>
-</p>
+<label class="label"><%= t("activerecord.attributes.character.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</label>
+<p><%= @character.name %></p>
 
-<p>
-  <b>Level:</b>
-  <%= @character.level %>
-</p>
+<label class="label"><%= t("activerecord.attributes.character.level", :default => t("activerecord.labels.level", :default => "Level")) %>:</label>
+<p><%= @character.level %></p>
 
-
-<%= link_to 'Edit', edit_character_path(@character) %> |
-<%= link_to 'Back', characters_path %>
+<div class="form-actions">
+<%= link_to "Back", characters_path, :class => 'btn'  %>
+<%= link_to "Edit", edit_character_path(@character), :class => 'btn' %>
+<%= link_to "Delete", character_path(@character), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
+</div>

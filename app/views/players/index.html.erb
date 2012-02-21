@@ -1,23 +1,30 @@
-<h1>Listing players</h1>
-
-<table>
+<h1>Players</h1>
+<table class="table table-striped">
+ <thead>
   <tr>
-    <th>Username</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>ID</th>
+        <th>
+      <%= t("activerecord.attributes.player.username", :default => t("activerecord.labels.username", :default => "Username")) %>
+    </th>
+        <th>Created at</th>
+    <th>Actions</th>
   </tr>
-
-<% @players.each do |player| %>
-  <tr>
-    <td><%= player.username %></td>
-    <td><%= link_to 'Show', player %></td>
-    <td><%= link_to 'Edit', edit_player_path(player) %></td>
-    <td><%= link_to 'Destroy', player, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  </thead>
+  <tbody>
+  <% @players.each do |player| -%>
+   <tr>
+    <td><%= player.id %></td>
+        <td><%= link_to player.username, player_path(player) %>
+    </td>
+        <td><%= player.created_at %></td>
+    <td>
+      <%= link_to "Show", player_path(player) %>
+      <%= link_to "Edit", edit_player_path(player) %>
+      <%= link_to "Destroy", player_path(player), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+    </td>
+    </tr>
+    <% end -%>
+   </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Player', new_player_path %>
+<%= link_to "New", new_player_path, :class => 'btn btn-primary' %>
