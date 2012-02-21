@@ -2,6 +2,8 @@
 
 one:
   username: MyString
+  truename: MyString
 
 two:
   username: MyString
+  truename: MyString

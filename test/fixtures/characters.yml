@@ -3,7 +3,11 @@
 one:
   name: MyString
   level: 1
+  player: MyString
+  game: MyString
 
 two:
   name: MyString
   level: 1
+  player: MyString
+  game: MyString

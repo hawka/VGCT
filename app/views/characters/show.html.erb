@@ -5,6 +5,12 @@
 <label class="label"><%= t("activerecord.attributes.character.level", :default => t("activerecord.labels.level", :default => "Level")) %>:</label>
 <p><%= @character.level %></p>
 
+<label class="label"><%= t("activerecord.attributes.character.player", :default => t("activerecord.labels.player", :default => "Player")) %>:</label>
+<p><%= link_to Player.find(@character.player).username, Player.find(@character.player) %></p>
+
+<label class="label"><%= t("activerecord.attributes.character.game", :default => t("activerecord.labels.game", :default => "Game")) %>:</label>
+<p><%= link_to Game.find(@character.game).title, Game.find(@character.game) %></p>
+
 <div class="form-actions">
 <%= link_to "Back", characters_path, :class => 'btn'  %>
 <%= link_to "Edit", edit_character_path(@character), :class => 'btn' %>

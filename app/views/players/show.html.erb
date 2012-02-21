@@ -2,6 +2,9 @@
 <label class="label"><%= t("activerecord.attributes.player.username", :default => t("activerecord.labels.username", :default => "Username")) %>:</label>
 <p><%= @player.username %></p>
 
+<label class="label"><%= t("activerecord.attributes.player.truename", :default => t("activerecord.labels.truename", :default => "Truename")) %>:</label>
+<p><%= @player.truename %></p>
+
 <div class="form-actions">
 <%= link_to "Back", players_path, :class => 'btn'  %>
 <%= link_to "Edit", edit_player_path(@player), :class => 'btn' %>
