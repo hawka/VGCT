@@ -25,6 +25,13 @@
 </div>
 
 <div class="clearfix">
+   <%= f.label :charpic, t("activerecord.attributes.character.charpic", :default => "Character Image"), :class => :label %>
+  <div class="input">
+    <%= f.file_field :charpic, :class => 'file_field' %>
+  </div>
+</div>
+
+<div class="clearfix">
    <%= f.label :player, t("activerecord.attributes.character.player", :default => "Player"), :class => :label %>
   <div class="input">
     <%= f.collection_select :player, Player.all, :id, :username %>
