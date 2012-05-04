@@ -3,7 +3,7 @@
 <p><%= @character.name %></p>
 
 <label class="label"><%= t("activerecord.attributes.character.charpic", :default => t("activerecord.labels.charpic", :default => "Character Image")) %>:</label>
-<p><%= image_tag @character.charpic_url %></p>
+<p><%= image_tag @character.charpic_url if @character.charpic %></p>
 
 <label class="label"><%= t("activerecord.attributes.character.level", :default => t("activerecord.labels.level", :default => "Level")) %>:</label>
 <p><%= @character.level %></p>
