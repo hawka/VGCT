@@ -2,11 +2,14 @@
 <label class="label"><%= t("activerecord.attributes.character.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</label>
 <p><%= @character.name %></p>
 
+<label class="label"><%= t("activerecord.attributes.character.level", :default => t("activerecord.labels.level", :default => "Level")) %>:</label>
+<p><%= @character.level %></p>
+
 <label class="label"><%= t("activerecord.attributes.character.charpic", :default => t("activerecord.labels.charpic", :default => "Character Image")) %>:</label>
 <p><%= image_tag @character.charpic_url if @character.charpic %></p>
 
-<label class="label"><%= t("activerecord.attributes.character.level", :default => t("activerecord.labels.level", :default => "Level")) %>:</label>
-<p><%= @character.level %></p>
+<label class="label"><%= t("activerecord.attributes.character.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</label>
+<p><%= @character.description %></p>
 
 <label class="label"><%= t("activerecord.attributes.character.player", :default => t("activerecord.labels.player", :default => "Player")) %>:</label>
 <p><%= link_to Player.find(@character.player).username, Player.find(@character.player) %></p>

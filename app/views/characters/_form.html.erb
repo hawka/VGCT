@@ -32,6 +32,13 @@
 </div>
 
 <div class="clearfix">
+   <%= f.label :description, t("activerecord.attributes.character.description", :default => "Description"), :class => :label %>
+  <div class="input">
+    <%= f.text_area :description, :class => 'text_area' %>
+  </div>
+</div>
+
+<div class="clearfix">
    <%= f.label :player, t("activerecord.attributes.character.player", :default => "Player"), :class => :label %>
   <div class="input">
     <%= f.collection_select :player, Player.all, :id, :username %>
